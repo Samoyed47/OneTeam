@@ -1,0 +1,166 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".TVDetail"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:onClick="onClick"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="电视剧"
+            android:textSize="24dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/detail_return"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:onClick="onClick"
+            app:srcCompat="@drawable/left_errow">
+
+        </ImageView>
+
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/TVDetail_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/Detail_TVImage"
+            android:layout_width="112dp"
+            android:layout_height="168dp"
+
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@android:drawable/ic_popup_sync" />
+
+            <TextView
+                android:id="@+id/Detail_TVName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="幸福到万家"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/Detail_TVImage"
+                app:layout_constraintTop_toTopOf="@+id/Detail_TVImage" />
+
+            <TextView
+                android:id="@+id/Detail_TVStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="赵丽颖/刘威"
+                app:layout_constraintTop_toBottomOf="@+id/Detail_TVName"
+                app:layout_constraintLeft_toLeftOf="@id/Detail_TVName"
+                android:layout_marginTop="12dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Detail_TVSum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40集"
+                app:layout_constraintTop_toBottomOf="@+id/Detail_TVStar"
+                app:layout_constraintLeft_toLeftOf="@id/Detail_TVStar"
+                android:layout_marginTop="0dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/Detail_TVBroadcast_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2022-6-19 播出"
+                app:layout_constraintTop_toBottomOf="@+id/Detail_TVSum"
+                app:layout_constraintLeft_toLeftOf="@id/Detail_TVSum"
+                android:layout_marginTop="0dp">
+
+            </TextView>
+
+        <LinearLayout
+            android:layout_width="79dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            android:background="@drawable/think"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Detail_TVImage">
+
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+
+                android:onClick="onClick"
+                android:background="@drawable/xingxing">
+
+            </ImageView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="想看"
+                android:textSize="16dp"
+
+                >
+
+            </TextView>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/table_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_page"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        </androidx.viewpager2.widget.ViewPager2>
+    </LinearLayout>
+
+
+
+</LinearLayout>
